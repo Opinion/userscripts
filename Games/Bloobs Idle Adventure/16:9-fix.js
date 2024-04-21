@@ -1,1 +1,65 @@
+// ==UserScript==
+// @name             [16:9-fix] Bloobs Idle Adventure
+// @description      Fix 16:9 scaling to use 100% of the available height.
+// @match            https://html-classic.itch.zone/html/10217388/index.html
+// @version          1.0
+// @updateURL        https://github.com/Opinion/userscripts/raw/main/Games/Bloobs%20Idle%20Adventure/16%3A9-fix.js
+// @downloadURL      https://github.com/Opinion/userscripts/raw/main/Games/Bloobs%20Idle%20Adventure/16%3A9-fix.js
+// ==/UserScript==
 
+/*
+Note: If the game url changes, please let me know :)
+      https://github.com/Opinion/userscripts/issues
+*/
+
+const style = `
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #06070b;
+}
+
+#unity-container.unity-desktop {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+#unity-canvas {
+  height: 100% !important;
+  width: auto !important;
+}
+`;
+
+(() => {
+  function log(...args) {
+    console.log('[16:9-fix]', ...args);
+  }
+
+  log('Removing unity controls...');
+  document.getElementById('unity-loading-bar')?.remove();
+  document.getElementById('unity-warning')?.remove();
+  document.getElementById('unity-footer')?.remove();
+
+  log('Injecting custom style...');
+  const styleElement = document.createElement('style');
+  styleElement.innerText = style;
+  document.body.append(styleElement);
+
+  log('Resizing game canvas to 16:9...');
+  const canvasElement = document.getElementById('unity-canvas');
+  canvasElement.width = 16;
+  canvasElement.height = 9;
+
+  log('Finished. Have fun 👍');
+  log('You can find more of my userscripts here; https://github.com/Opinion/userscripts');
+})();
