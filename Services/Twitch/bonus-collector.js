@@ -7,15 +7,15 @@
 // @downloadURL      https://github.com/Opinion/userscripts/raw/main/Services/Twitch/bonus-collector.js
 // ==/UserScript==
 
+function log(...args) {
+  console.log('[bonus-collector]', ...args);
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 (async () => {
-  function log(...args) {
-    console.log('[bonus-collector]', ...args);
-  }
-
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   log('Started.');
   log('You can find more of my userscripts here; https://github.com/Opinion/userscripts');
   while (true) {
