@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name             [16:9-fix] Bloobs Idle Adventure
+// @name             Bloobs Idle Adventure - 16:9-fix.js
 // @description      Fix 16:9 scaling to use 100% of the available height.
 // @match            https://html-classic.itch.zone/html/10217388/index.html
 // @version          1.0
