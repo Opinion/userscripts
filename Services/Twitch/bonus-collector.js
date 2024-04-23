@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name             [bonus-collector] Twitch
+// @name             Twitch - bonus-collector.js
 // @description      Automatically collect bonus in live channels.
 // @match            *://*.twitch.tv/*
 // @version          1.0.0
