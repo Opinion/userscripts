@@ -98,8 +98,6 @@ const template = {
   },
 };
 
-
-
 (()=> {
   log('Started.');
   template.inject();
