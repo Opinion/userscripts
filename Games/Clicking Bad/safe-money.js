@@ -2,7 +2,7 @@
 // @name             Clicking Bad - safe-money.js
 // @description      Adds calculations for how much money is safe to use without affecting laundered money.
 // @match            http://clickingbad.nullism.com/
-// @version          1.0.0
+// @version          1.0.1
 // @updateURL        https://github.com/Opinion/userscripts/raw/main/Games/Clicking%20Bad/safe-money.js
 // @downloadURL      https://github.com/Opinion/userscripts/raw/main/Games/Clicking%20Bad/safe-money.js
 // ==/UserScript==
