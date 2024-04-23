@@ -75,13 +75,13 @@ const template = {
   $<strong><span id="sell_amt">0</span></strong> total
 </span><br>
 
-<span title="Try to increase laundered money to make IRS audits less frequent">
-  <small>$<span id="safe_cash">0</span> laundered</small><br>
-</span>
-
 <span title="You can use this money without affecting the growth of your landered money. It is calculated like this: (total - laundered = this)">
   <small>$<span id="usable_money">0</span> safe to use</small>
 </span><br>
+
+<span title="Try to increase laundered money to make IRS audits less frequent">
+  <small>$<span id="safe_cash">0</span> laundered</small><br>
+</span>
 
 <small>$<span id="seller_rps">0</span> per second</small><br>
   `,
