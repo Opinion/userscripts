@@ -12,6 +12,10 @@ Note: If the game url changes, please let me know :)
       https://github.com/Opinion/userscripts/issues
 */
 
+function log(...args) {
+  console.log('[16:9-fix]', ...args);
+}
+
 const style = `
 html,
 body {
@@ -41,10 +45,6 @@ body {
 `;
 
 (() => {
-  function log(...args) {
-    console.log('[16:9-fix]', ...args);
-  }
-
   log('Removing unity controls...');
   document.getElementById('unity-loading-bar')?.remove();
   document.getElementById('unity-warning')?.remove();
