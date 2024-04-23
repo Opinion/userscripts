@@ -2,7 +2,7 @@
 // @name             Twitch - bonus-collector.js
 // @description      Automatically collect bonus in live channels.
 // @match            *://*.twitch.tv/*
-// @version          1.0.0
+// @version          1.0.1
 // @updateURL        https://github.com/Opinion/userscripts/raw/main/Services/Twitch/bonus-collector.js
 // @downloadURL      https://github.com/Opinion/userscripts/raw/main/Services/Twitch/bonus-collector.js
 // ==/UserScript==
