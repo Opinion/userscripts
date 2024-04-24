@@ -98,7 +98,11 @@ function getIframeLink() {
     return;
   }
 
-  if (document.title === 'Unity WebGL Player | Bloobs Idle Adventure') {
+  const fullscreenTitles = [
+    'Unity WebGL Player | Bloobs Adventure Idle',
+    'Unity WebGL Player | Bloobs Idle Adventure',
+  ];
+  if (fullscreenTitles.includes(document.title)) {
     fullscreen();
     return;
   }
