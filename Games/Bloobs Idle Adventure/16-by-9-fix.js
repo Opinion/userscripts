@@ -1,15 +1,16 @@
 // ==UserScript==
 // @name             Bloobs Idle Adventure - 16-by-9-fix.js
 // @description      Fix 16:9 scaling to use 100% of the available height.
-// @match            https://html-classic.itch.zone/html/10258407/index.html
+// @match            https://html-classic.itch.zone/html/*/index.html
+// @match            https://dev-bloob.itch.io/bloobsadventureidle
 // @version          1.0.2
 // @updateURL        https://github.com/Opinion/userscripts/raw/main/Games/Bloobs%20Idle%20Adventure/16-by-9-fix.js
 // @downloadURL      https://github.com/Opinion/userscripts/raw/main/Games/Bloobs%20Idle%20Adventure/16-by-9-fix.js
 // ==/UserScript==
 
 /*
-Note: If the game url changes, please let me know :)
-      https://github.com/Opinion/userscripts/issues
+Note: Game URL changes all the time. Go to https://dev-bloob.itch.io/bloobsadventureidle
+      and click the 'open fullscreen' link.
 */
 
 function log(...args) {
@@ -44,7 +45,9 @@ body {
 }
 `;
 
-(() => {
+function fullscreen() {
+  log('Detected: Fullscreen');
+
   log('Removing unity controls...');
   document.getElementById('unity-loading-bar')?.remove();
   document.getElementById('unity-warning')?.remove();
@@ -62,4 +65,41 @@ body {
 
   log('Finished. Have fun 👍');
   log('You can find more of my userscripts here; https://github.com/Opinion/userscripts');
+}
+
+function storePage() {
+  log('Detected: store page');
+
+  const linkElement = document.createElement('a');
+  linkElement.href = '#';
+  linkElement.innerText = '[16-by-9-fix.js]: Open the game in fullscreen';
+  linkElement.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.replace(getIframeLink());
+  });
+
+  const containerElement = document.createElement('div');
+  containerElement.style = 'font-size: 2rem;';
+  containerElement.append(linkElement);
+
+  document.getElementById('header')?.append(containerElement);
+
+  log('Press the fullscreen button to open the game directly.');
+}
+
+function getIframeLink() {
+  document.querySelector('button.button.load_iframe_btn')?.click();
+  return document.querySelector('iframe#game_drop')?.src;
+}
+
+(() => {
+  if (document.location.href === 'https://dev-bloob.itch.io/bloobsadventureidle') {
+    storePage();
+    return;
+  }
+
+  if (document.title === 'Unity WebGL Player | Bloobs Idle Adventure') {
+    fullscreen();
+    return;
+  }
 })();
