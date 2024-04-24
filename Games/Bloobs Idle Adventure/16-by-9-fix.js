@@ -3,13 +3,13 @@
 // @description      Fix 16:9 scaling to use 100% of the available height.
 // @match            https://html-classic.itch.zone/html/*/index.html
 // @match            https://dev-bloob.itch.io/bloobsadventureidle
-// @version          1.0.2
+// @version          1.1.0
 // @updateURL        https://github.com/Opinion/userscripts/raw/main/Games/Bloobs%20Idle%20Adventure/16-by-9-fix.js
 // @downloadURL      https://github.com/Opinion/userscripts/raw/main/Games/Bloobs%20Idle%20Adventure/16-by-9-fix.js
 // ==/UserScript==
 
 /*
-Note: Game URL changes all the time. Go to https://dev-bloob.itch.io/bloobsadventureidle
+Note: Fullscreen/direct URL changes all the time. Go to https://dev-bloob.itch.io/bloobsadventureidle
       and click the 'open fullscreen' link.
 */
 
